@@ -1,0 +1,7 @@
+{
+  "name": "codeone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
