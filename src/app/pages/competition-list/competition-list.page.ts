@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ModalController } from '@ionic/angular';
 
@@ -12,18 +13,22 @@ import { CompetitionPage } from "./competition/competition.page";
 export class CompetitionListPage implements OnInit {
 
   constructor(
-    private modalController: ModalController
+    private modalController: ModalController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router, 
   ) { }
 
 
   ngOnInit() {
   }
 
-  async onCompetitionJoin() {
-    const modal = await this.modalController.create({
-      component: CompetitionPage,
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();
+  otCompetition() {
+    // const modal = await this.modalController.create({
+    //   component: CompetitionPage,
+    //   cssClass: 'my-custom-class'
+    // });
+    // return await modal.present();
+
+    this.router.navigate(['competition-list/competition']);
   }
 }

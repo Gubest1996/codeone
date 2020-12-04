@@ -22,7 +22,7 @@ export class CompetitionPage implements OnInit {
   ngOnInit() {
   }
 
-  async onCompetitionJoin() {
+  async otCompetitionList() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'ยืนยันข้อมูล',
@@ -39,17 +39,13 @@ export class CompetitionPage implements OnInit {
           text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
-            this.router.navigate(['../../'], { relativeTo: this.activatedRoute });
+            this.router.navigate(['../../competition-list']);
           }
         }
       ]
     });
 
     await alert.present();
-  }
-
-  dimissModal(): void {
-    this.modalController.dismiss().then().catch();
   }
 
 }
