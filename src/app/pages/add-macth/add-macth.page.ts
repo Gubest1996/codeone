@@ -1,7 +1,9 @@
 import { PopoverComponent } from './../../components/popover/popover.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { ModalController, PopoverController} from '@ionic/angular';
+
 import { AddPage } from './add/add.page';
 
 @Component({
@@ -12,11 +14,16 @@ import { AddPage } from './add/add.page';
 export class AddMacthPage implements OnInit {
 
   constructor(
+    private router: Router,
     private modalController: ModalController,
     private popoverController: PopoverController
   ) { }
 
   ngOnInit() {
+  }
+
+  joinMacth() {
+    this.router.navigate(['add-macth/join']);
   }
 
   async presentModal() {
