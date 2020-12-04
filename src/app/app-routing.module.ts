@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  // },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'add-macth',
     pathMatch: 'full'
   },
   {
@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'list-macth',
     loadChildren: () => import('./pages/list-macth/list-macth.module').then( m => m.ListMacthPageModule)
   },
+  {
+    path: 'competition-list',
+    loadChildren: () => import('./pages/competition-list/competition-list.module').then( m => m.CompetitionListPageModule)
+  },
+
 ];
 
 @NgModule({
