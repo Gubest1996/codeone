@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>รายละเอียดการแข่งขัน</ion-title>
+    <ion-buttons slot="start" (click)="dismissModal()">
+      <ion-icon slot="start" name="caret-back-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item class="ion-margin-end">
+      <ion-label position="floating">ประเภทการแข่งขัน</ion-label>
+      <ion-input value="Disabled" disabled></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item class="ion-margin-end">
+      <ion-label position="stacked">ชื่อรายการการแข่งขัน</ion-label>
+      <ion-input clearInput></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-item class="ion-margin-end">
+          <ion-label position="stacked">จำนวนคนที่รับสมัคร</ion-label>
+          <ion-input type="number" clearInput></ion-input>
+        </ion-item>
+        
+      </ion-col>
+      <ion-col>
+        <ion-item class="ion-margin-end">
+          <ion-label position="stacked">วันที่ปิดรับสมัคร</ion-label>
+          <ion-datetime displayFormat="MM DD YY" placeholder="เลือกวันที่"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-item class="ion-margin-end">
+        <ion-label>สถานะการรับสมัคร</ion-label>
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+    </ion-row>
+  </ion-card>
+  <ion-button (click)="presentAlert()" expand="block" shape="round" color="success">ยืนยัน</ion-button>
+</ion-content>
