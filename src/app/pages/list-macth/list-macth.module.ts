@@ -1,3 +1,5 @@
+import { AccordianComponent } from './../../components/accordion/accordion.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +10,7 @@ import { ListMacthPageRoutingModule } from './list-macth-routing.module';
 
 import { ListMacthPage } from './list-macth.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +18,6 @@ import { ListMacthPage } from './list-macth.page';
     IonicModule,
     ListMacthPageRoutingModule
   ],
-  declarations: [ListMacthPage]
+  declarations: [ListMacthPage, AccordianComponent]
 })
 export class ListMacthPageModule {}
