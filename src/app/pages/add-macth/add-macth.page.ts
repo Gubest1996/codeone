@@ -23,7 +23,7 @@ export class AddMacthPage implements OnInit {
   }
 
   joinMacth() {
-    this.router.navigate(['add-macth/join']);
+    this.router.navigate(['add-macth/add']);
   }
 
   addMacth() {
