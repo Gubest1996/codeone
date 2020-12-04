@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
@@ -9,6 +11,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 export class AddPage implements OnInit {
   
   constructor(
+    private router: Router,
     private alertController: AlertController,
     private modalController: ModalController,
   ) { }
@@ -16,7 +19,7 @@ export class AddPage implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert() {
+  async addMacthAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'ยืนยันข้อมูล',
@@ -32,6 +35,7 @@ export class AddPage implements OnInit {
           text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
+            this.router.navigate(['../../add-macth']);
           }
         }
       ]
@@ -39,8 +43,8 @@ export class AddPage implements OnInit {
     await alert.present();
   }
 
-  dismissModal(): void {
-		this.modalController.dismiss().then().catch();
-  }
+  // dismissModal(): void {
+	// 	this.modalController.dismiss().then().catch();
+  // }
   
 }

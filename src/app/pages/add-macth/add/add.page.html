@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>รายละเอียดการแข่งขัน</ion-title>
-    <ion-buttons slot="start" (click)="dismissModal()">
+
+    <!-- <ion-buttons slot="start" (click)="dismissModal()">
       <ion-icon slot="start" name="caret-back-outline"></ion-icon>
+    </ion-buttons> -->
+
+    <!-- Back button -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
     </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -41,5 +48,5 @@
       </ion-item>
     </ion-row>
   </ion-card>
-  <ion-button (click)="presentAlert()" expand="block" shape="round" color="success">ยืนยัน</ion-button>
+  <ion-button (click)="addMacthAlert()" expand="block" shape="round" color="success">ยืนยัน</ion-button>
 </ion-content>

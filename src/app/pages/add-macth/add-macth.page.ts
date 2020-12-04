@@ -26,21 +26,15 @@ export class AddMacthPage implements OnInit {
     this.router.navigate(['add-macth/join']);
   }
 
-  async presentModal() {
-    const modal = await this.modalController.create({
-        component: AddPage
-    });
-    return await modal.present();
+  addMacth() {
+    this.router.navigate(['add-macth/add']);
   }
 
-  async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
-      component: PopoverComponent,
-      cssClass: 'my-custom-class',
-      event: ev,
-      translucent: true
-    });
-    return await popover.present();
-  }
+  // async presentModal() {
+  //   const modal = await this.modalController.create({
+  //       component: AddPage
+  //   });
+  //   return await modal.present();
+  // }
 
 }

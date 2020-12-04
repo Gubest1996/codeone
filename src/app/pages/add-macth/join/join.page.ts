@@ -18,7 +18,7 @@ export class JoinPage implements OnInit {
   ngOnInit() {
   }
 
-  async otCompetitionList() {
+  async joinMathAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'ยืนยันข้อมูล',
