@@ -7,11 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: CompetitionListPage
+  },  {
+    path: 'score',
+    loadChildren: () => import('./score/score.module').then( m => m.ScorePageModule)
   },
-  {
-    path: 'competition',
-    loadChildren: () => import('./competition/competition.module').then( m => m.CompetitionPageModule)
-  }
+
 ];
 
 @NgModule({
