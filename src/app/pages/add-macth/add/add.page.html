@@ -18,7 +18,7 @@
   <ion-card>
     <ion-item class="ion-margin-end">
       <ion-label position="floating">ประเภทการแข่งขัน</ion-label>
-      <ion-input value="Disabled" disabled></ion-input>
+      <ion-input value="แบดมินตันชาย 18 ปี" disabled></ion-input>
     </ion-item>
   </ion-card>
   <ion-card>
@@ -38,8 +38,8 @@
       </ion-col>
       <ion-col>
         <ion-item class="ion-margin-end">
-          <ion-label position="stacked">วันที่ปิดรับสมัคร</ion-label>
-          <ion-datetime displayFormat="DD MM YY" placeholder="เลือกวันที่"></ion-datetime>
+          <ion-label position="stacked" >วันที่ปิดรับสมัคร</ion-label>
+          <ion-datetime displayFormat="DD/MM/YY" placeholder="เลือกวันที่"></ion-datetime>
         </ion-item>
       </ion-col>
       <ion-item class="ion-margin-end">
@@ -48,5 +48,6 @@
       </ion-item>
     </ion-row>
   </ion-card>
-  <ion-button (click)="addMacthAlert()" expand="block" shape="round" color="success">ยืนยัน</ion-button>
+  <ion-button (click)="addMacthAlert()" expand="block" shape="round" color="success" class="button">ยืนยัน</ion-button>
+
 </ion-content>
