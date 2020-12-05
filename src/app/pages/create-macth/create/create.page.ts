@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create',
@@ -10,32 +12,37 @@ export class CreatePage implements OnInit {
 
   constructor(
     private modalController: ModalController,
+    private router: Router,
+    private alertController: AlertController,
   ) { }
 
   ngOnInit() {
   }
 
-  dismissModal(): void {
-		this.modalController.dismiss().then().catch();
+  async createMacthAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'ยืนยันข้อมูล',
+      message: 'แบดมินตันชาย 18 ปี',
+      buttons: [
+        {
+          text: 'แก้ไข',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'ยืนยัน',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.router.navigate(['../../create-macth']);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
-
-  customAlertOptions: any = {
-    header: 'Pizza Toppings',
-    subHeader: 'Select your toppings',
-    message: '$1.00 per topping',
-    translucent: true
-  };
-
-  customPopoverOptions: any = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color'
-  };
-
-  customActionSheetOptions: any = {
-    header: 'Colors',
-    subHeader: 'Select your favorite color'
-  };
-
   
 }

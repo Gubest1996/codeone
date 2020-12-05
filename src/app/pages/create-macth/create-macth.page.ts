@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { ModalController } from '@ionic/angular';
+
 import { CreatePage } from './create/create.page';
 
 @Component({
@@ -11,16 +14,21 @@ export class CreateMacthPage implements OnInit {
 
   constructor(
     private modalController: ModalController,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  async presentModal() {
-    const modal = await this.modalController.create({
-        component: CreatePage
-    });
-    return await modal.present();
+  createMacth() {
+    this.router.navigate(['create-macth/create']);
   }
+
+  // async presentModal() {
+  //   const modal = await this.modalController.create({
+  //       component: CreatePage
+  //   });
+  //   return await modal.present();
+  // }
 
 }
