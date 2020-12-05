@@ -20,13 +20,7 @@ export class CompetitionListPage implements OnInit {
   ngOnInit() {
   }
 
-  otCompetition() {
-    // const modal = await this.modalController.create({
-    //   component: CompetitionPage,
-    //   cssClass: 'my-custom-class'
-    // });
-    // return await modal.present();
-
-    this.router.navigate(['competition-list/competition']);
+  scoreManagement() {
+    this.router.navigate(['competition-list/score']);
   }
 }
