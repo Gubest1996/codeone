@@ -43,8 +43,8 @@ export class AddPage implements OnInit {
     await alert.present();
   }
 
-  // dismissModal(): void {
-	// 	this.modalController.dismiss().then().catch();
-  // }
+  backAddMacth(): void {
+		this.modalController.dismiss().then().catch();
+  }
   
 }

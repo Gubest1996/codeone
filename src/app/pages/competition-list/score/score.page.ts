@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class ScorePage implements OnInit {
   constructor(
     private router: Router,
     private alertController: AlertController,
+    private modalController: ModalController,
   ) { }
 
   ngOnInit() {
@@ -42,4 +43,9 @@ export class ScorePage implements OnInit {
     });
     await alert.present();
   }
+
+  backCompetition(): void {
+		this.modalController.dismiss().then().catch();
+  }
+
 }

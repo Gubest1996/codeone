@@ -13,6 +13,7 @@ export class JoinPage implements OnInit {
   constructor(
     private alertController: AlertController,
     private router: Router,
+    private modalController: ModalController,
   ) { }
 
   ngOnInit() {
@@ -44,4 +45,7 @@ export class JoinPage implements OnInit {
     await alert.present();
   }
 
+  backAddMacth(): void {
+		this.modalController.dismiss().then().catch();
+  }
 }

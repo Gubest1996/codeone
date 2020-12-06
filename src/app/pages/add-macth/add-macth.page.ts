@@ -22,19 +22,15 @@ export class AddMacthPage implements OnInit {
   ngOnInit() {
   }
 
-  joinMacth() {
-    this.router.navigate(['add-macth/add']);
-  }
-
-  addMacth() {
-    this.router.navigate(['add-macth/add']);
-  }
-
-  // async presentModal() {
-  //   const modal = await this.modalController.create({
-  //       component: AddPage
-  //   });
-  //   return await modal.present();
+  // addMacth() {
+  //   this.router.navigate(['add-macth/add']);
   // }
+
+  async addMacth() {
+    const modal = await this.modalController.create({
+        component: AddPage
+    });
+    return await modal.present();
+  }
 
 }
