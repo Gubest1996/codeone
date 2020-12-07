@@ -29,12 +29,12 @@
         <!-- Inputs with labels -->
         <ion-item>
           <ion-label position="stacked">ชื่อ</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input type="text" value="" [(ngModel)]="joinMacth.firstName"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">นามสกุล</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input type="text" value="" [(ngModel)]="joinMacth.lastName"></ion-input>
         </ion-item>
 
       </ion-col>
@@ -49,7 +49,7 @@
         <!-- Inputs with labels -->
         <ion-item>
           <ion-label position="stacked">เบอร์โทร</ion-label>
-          <ion-input type="text" value=""></ion-input>
+          <ion-input type="text" value="" [(ngModel)]="joinMacth.phoneNumber"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -59,6 +59,6 @@
   <!-- start:: Card Upload image -->
   <!-- end:: Card Upload image -->
 
-  <ion-button expand="block" shape="round" color="success" class="ion-margin-horizontal" (click)="joinMathAlert()">ยืนยัน</ion-button>
+  <ion-button expand="block" shape="round" color="success" class="ion-margin-horizontal" (click)="onSubmit()">ยืนยัน</ion-button>
 
 </ion-content>

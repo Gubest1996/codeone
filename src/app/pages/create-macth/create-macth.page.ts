@@ -20,15 +20,11 @@ export class CreateMacthPage implements OnInit {
   ngOnInit() {
   }
 
-  createMacth() {
-    this.router.navigate(['create-macth/create']);
+  async createMacth() {
+    const modal = await this.modalController.create({
+        component: CreatePage
+    });
+    return await modal.present();
   }
-
-  // async presentModal() {
-  //   const modal = await this.modalController.create({
-  //       component: CreatePage
-  //   });
-  //   return await modal.present();
-  // }
 
 }

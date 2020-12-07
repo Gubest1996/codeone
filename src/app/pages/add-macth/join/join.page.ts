@@ -10,6 +10,12 @@ import { AlertController, ModalController } from '@ionic/angular';
 })
 export class JoinPage implements OnInit {
 
+  joinMacth = {
+    firstName: '',
+    lastName: '',
+    phoneNumber: ''
+  }
+
   constructor(
     private alertController: AlertController,
     private router: Router,
@@ -19,7 +25,7 @@ export class JoinPage implements OnInit {
   ngOnInit() {
   }
 
-  async joinMathAlert() {
+  async onSubmit() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'ยืนยันข้อมูล',
@@ -36,13 +42,21 @@ export class JoinPage implements OnInit {
           text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
-            this.router.navigate(['../../add-macth']);
+            this.createForm();
+            this.backAddMacth();
           }
         }
       ]
     });
 
     await alert.present();
+  }
+
+  /**
+   * createForm
+   */
+  createForm() {
+    console.log(this.joinMacth);
   }
 
   backAddMacth(): void {

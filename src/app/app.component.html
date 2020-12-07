@@ -2,30 +2,30 @@
   <ion-menu menuId="admin-menu" content-id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title>เมนู</ion-title>
+        <ion-title class="ion-text-center" style="font-size: 20px;">เมนู</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
-      <ion-list>
+      <ion-list class="menu-item" lines="none">
         <ion-menu-toggle>
           <ion-item class="ion-margin-end" routerLink="/add-macth">
-            <ion-label>เพิ่มรายการการแข่งขัน</ion-label>
+            <ion-icon name="create-outline"></ion-icon>เพิ่มรายการการแข่งขัน
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item class="ion-margin-end" routerLink="/create-macth">
-            <ion-label>จัดตารางการแข่งขัน</ion-label>
+            <ion-icon name="duplicate-outline"></ion-icon>จัดตารางการแข่งขัน
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item class="ion-margin-end" routerLink="/competition-list">
-            <ion-label>รายการการแข่งขัน</ion-label>
+            <ion-icon name="calendar-outline"></ion-icon>รายการการแข่งขัน
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item class="ion-margin-end" routerLink="/list-macth">
-            <ion-label>ผลการแข่งขัน</ion-label>
+            <ion-icon name="ribbon-outline"></ion-icon>ผลการแข่งขัน
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

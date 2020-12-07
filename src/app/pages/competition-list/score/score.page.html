@@ -13,27 +13,41 @@
 <ion-content>
 
   <!-- start:: Macth number -->
-  <ion-item color="medium" class="ion-margin-horizontal ion-margin-vertical">
-    <ion-grid fixed color="ligth">
-      <ion-row>
-        <ion-col size="2" offset="2">
-          <ion-item>
-            <ion-row>
-              <ion-label class="ion-text-center">1</ion-label>
-            </ion-row>
-          </ion-item>
-        </ion-col>
-        <ion-col size="2" offset="3" class="ion-text-center">
-          <ion-item>
-            <ion-row>
-              <ion-label class="ion-text-center">2</ion-label>
-            </ion-row>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
+<!--  <ion-item color="medium" class="ion-margin-horizontal ion-margin-vertical">-->
+<!--    <ion-grid fixed color="ligth">-->
+<!--      <ion-row>-->
+<!--        <ion-col size="2" offset="2">-->
+<!--          <ion-item>-->
+<!--            <ion-row>-->
+<!--              <ion-label class="ion-text-center">1</ion-label>-->
+<!--            </ion-row>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--        <ion-col size="2" offset="3" class="ion-text-center">-->
+<!--          <ion-item>-->
+<!--            <ion-row>-->
+<!--              <ion-label class="ion-text-center">2</ion-label>-->
+<!--            </ion-row>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
+<!--  </ion-item>-->
   <!-- end:: Macth number -->
+
+  <ion-card>
+    <ion-segment (ionChange)="segmentChanged($event)" color="danger">
+      <ion-segment-button value="game1">
+        <ion-label>เกม 1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="game2">
+        <ion-label>เกม 2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="game3">
+        <ion-label>เกม 3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-card>
 
   <!-- start:: Player detail and report alert -->
   <ion-item color="medium" class="ion-margin-horizontal ion-margin-vertical">

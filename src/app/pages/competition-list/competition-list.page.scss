@@ -1,0 +1,23 @@
+ion-header{
+
+    ion-toolbar{
+        padding: 0 10px;
+        --background: #4d4d4d;
+        background: #4d4d4d;
+
+        ion-title{
+            font-size: 20px;
+        }
+    }
+}
+
+ion-content{
+    --background: #7a7a7a;
+    background: #7a7a7a;
+
+    ion-card{
+        --background: #565656;
+        background: #565656;
+    }
+}
+

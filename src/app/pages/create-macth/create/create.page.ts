@@ -10,6 +10,14 @@ import { AlertController, ModalController } from '@ionic/angular';
 })
 export class CreatePage implements OnInit {
 
+  createMacth = {
+    palyer1: '',
+    player2: '',
+    field: '',
+    date: undefined,
+    time: undefined
+  };
+
   constructor(
     private modalController: ModalController,
     private router: Router,
@@ -36,13 +44,28 @@ export class CreatePage implements OnInit {
           text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
-            this.router.navigate(['../../create-macth']);
+            this.createForm();
+            this.backAddMacth();
           }
         }
       ]
     });
 
     await alert.present();
+  }
+
+  /**
+   * createForm
+   */
+  createForm() {
+    console.log(this.createMacth);
+  }
+
+  /**
+	 * Back Page Buttom
+	 */
+  backAddMacth(): void {
+		this.modalController.dismiss().then().catch();
   }
   
 }

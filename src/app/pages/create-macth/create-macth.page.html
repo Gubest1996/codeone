@@ -14,7 +14,7 @@
       <ion-row>
         <ion-col>
           <ion-row>
-            <ion-col class="ion-align-self-start ion-text-start">
+            <ion-col class="ion-align-self-start ion-text-center">
               9:00
             </ion-col>
           </ion-row>
@@ -33,8 +33,8 @@
         </ion-col>
         <ion-col class="ion-align-self-end">
           <ion-item>
-            <ion-thumbnail slot="start">
-              <ion-img src="../../../assets/img/220454.jpg"></ion-img>
+            <ion-thumbnail slot="start" expand="full">
+              <ion-img src="../../../assets/img/220454.jpg" expand="full"></ion-img>
             </ion-thumbnail>
           </ion-item>
         </ion-col>
@@ -73,10 +73,13 @@
       </ion-row>
     </ion-grid>
   </ion-card>
-  
+
+  <!-- start:: Fab Button Create match -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="createMacth()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <!-- end:: Fab Button Create match -->
+
 </ion-content>

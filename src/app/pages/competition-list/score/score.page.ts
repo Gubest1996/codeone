@@ -48,4 +48,8 @@ export class ScorePage implements OnInit {
 		this.modalController.dismiss().then().catch();
   }
 
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+  }
+
 }

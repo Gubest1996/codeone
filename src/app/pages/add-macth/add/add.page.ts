@@ -3,13 +3,24 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { AlertController, ModalController } from '@ionic/angular';
 
+import { AddMacth } from "../../../core/add-macth/_models/add-macth.model";
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.page.html',
   styleUrls: ['./add.page.scss'],
 })
 export class AddPage implements OnInit {
-  
+
+  addMacth = {
+    competition: '',
+    body: '',
+    dateClose: undefined,
+    statusOfColse: ''
+  };
+
+  typeMacth:string = 'แบดมินตันชาย 18 ปี';
+
   constructor(
     private router: Router,
     private alertController: AlertController,
@@ -35,7 +46,8 @@ export class AddPage implements OnInit {
           text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
-            this.router.navigate(['../../add-macth']);
+            this.createForm();
+            this.backAddMacth();
           }
         }
       ]
@@ -43,6 +55,20 @@ export class AddPage implements OnInit {
     await alert.present();
   }
 
+  /**
+	 * Create form
+	 */
+  createForm() {
+    console.log(this.addMacth);
+  }
+
+  onSubmit() {
+
+  }
+
+  /**
+	 * Back Buttom
+	 */
   backAddMacth(): void {
 		this.modalController.dismiss().then().catch();
   }
