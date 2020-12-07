@@ -1,13 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>จัดตารางการแข่งขัน</ion-title>
-    <!-- <ion-buttons slot="start" (click)="dismissModal()">
-      <ion-icon slot="start" name="caret-back-outline"></ion-icon>
-    </ion-buttons> -->
 
     <!-- Back page button -->
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+    <ion-buttons slot="start" (click)="backAddMacth()">
+      <ion-icon slot="start" name="caret-back-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,28 +14,28 @@
   <ion-card>
     <ion-item>
       <ion-label position="floating" style="font-size: 20px;">รายการการแข่งขัน</ion-label>
-      <ion-input value="แบตมินตันชาย" disabled></ion-input>
+      <ion-input type="text" value="แบตมินตันชาย" readonly></ion-input>
     </ion-item>
   </ion-card>
 
   <ion-card>
     <ion-item>
       <ion-label position="stacked" style="font-size: 20px;">ผู้แข่งขันที่ 1</ion-label>
-      <ion-input clearInput></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="createMacth.palyer1"></ion-input>
     </ion-item>
   </ion-card>
 
   <ion-card>
     <ion-item>
       <ion-label position="stacked" style="font-size: 20px;">ผู้แข่งขันที่ 2</ion-label>
-      <ion-input clearInput></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="createMacth.player2"></ion-input>
     </ion-item>
   </ion-card>
 
   <ion-card>
     <ion-item>
       <ion-label position="stacked" style="font-size: 20px;">สนามแข่งขัน</ion-label>
-      <ion-select  interface="popover" placeholder="เลือกสนาม">
+      <ion-select  interface="popover" placeholder="เลือกสนาม" [(ngModel)]="createMacth.field">
         <ion-select-option value="field1">1</ion-select-option>
         <ion-select-option value="field2">2</ion-select-option>
         <ion-select-option value="field3">3</ion-select-option>
@@ -52,13 +49,13 @@
       <ion-col>
         <ion-item>
           <ion-label position="stacked" style="font-size: 20px;">วันที่แข่ง</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" placeholder="เลือกวันที่"></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" placeholder="เลือกวันที่" [(ngModel)]="createMacth.date"></ion-datetime>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
           <ion-label position="stacked" style="font-size: 20px;">เวลาแข่ง</ion-label>
-          <ion-datetime displayFormat="HH:mm" placeholder="เลือกเวลา"></ion-datetime>
+          <ion-datetime displayFormat="HH:mm" placeholder="เลือกเวลา" [(ngModel)]="createMacth.time"></ion-datetime>
         </ion-item>
       </ion-col>
     </ion-row>

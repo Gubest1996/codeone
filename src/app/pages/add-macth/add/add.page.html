@@ -10,16 +10,17 @@
 </ion-header>
 
 <ion-content>
+
   <ion-card>
     <ion-item class="ion-margin-end">
       <ion-label position="floating">ประเภทการแข่งขัน</ion-label>
-      <ion-input value="แบดมินตันชาย 18 ปี" disabled></ion-input>
+      <ion-input type="text" [value]="typeMacth" readonly></ion-input>
     </ion-item>
   </ion-card>
   <ion-card>
     <ion-item class="ion-margin-end">
       <ion-label position="stacked" style="font-size: 20px;">ชื่อรายการการแข่งขัน</ion-label>
-      <ion-input clearInput></ion-input>
+      <ion-input [(ngModel)]="addMacth.competition"></ion-input>
     </ion-item>
   </ion-card>
   <ion-card>
@@ -27,22 +28,21 @@
       <ion-col>
         <ion-item class="ion-margin-end">
           <ion-label position="stacked" style="font-size: 20px;">จำนวนคนที่รับสมัคร</ion-label>
-          <ion-input type="number" clearInput></ion-input>
+          <ion-input type="number" [(ngModel)]="addMacth.body"></ion-input>
         </ion-item>
-        
       </ion-col>
       <ion-col>
         <ion-item class="ion-margin-end">
           <ion-label position="stacked" style="font-size: 20px;">วันที่ปิดรับสมัคร</ion-label>
-          <ion-datetime displayFormat="DD/MM/YY" placeholder="เลือกวันที่"></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YY" placeholder="เลือกวันที่" [(ngModel)]="addMacth.dateClose"></ion-datetime>
         </ion-item>
       </ion-col>
       <ion-item class="ion-margin-end">
         <ion-label>สถานะการรับสมัคร</ion-label>
-        <ion-toggle checked></ion-toggle>
+        <ion-toggle checked [(ngModel)]="addMacth.statusOfColse"></ion-toggle>
       </ion-item>
     </ion-row>
   </ion-card>
-  <ion-button (click)="addMacthAlert()" expand="block" shape="round" color="success" class="button">ยืนยัน</ion-button>
+  <ion-button ion-button type="submit" (click)="addMacthAlert()" expand="block" shape="round" color="success" class="button">ยืนยัน</ion-button>
 
 </ion-content>
