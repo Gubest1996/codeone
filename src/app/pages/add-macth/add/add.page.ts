@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AlertController, ModalController } from '@ionic/angular';
 
-import { AddMacth } from "../../../core/add-macth/_models/add-macth.model";
+import { AddMacth } from './../../../core/add-macth/_models/add-macth.model';
 
 @Component({
   selector: 'app-add',
@@ -12,16 +13,14 @@ import { AddMacth } from "../../../core/add-macth/_models/add-macth.model";
 })
 export class AddPage implements OnInit {
 
-  addMacth = {
-    competition: '',
-    body: '',
-    dateClose: undefined,
-    statusOfColse: ''
-  };
+  addMacthModel: AddMacth;
+
+  addMacth: FormGroup;
 
   typeMacth:string = 'แบดมินตันชาย 18 ปี';
 
   constructor(
+    public formBuilder: FormBuilder,
     private router: Router,
     private alertController: AlertController,
     private modalController: ModalController,
@@ -59,11 +58,22 @@ export class AddPage implements OnInit {
 	 * Create form
 	 */
   createForm() {
+    this.addMacth = this.formBuilder.group({
+      competition: [this.addMacthModel.competition],
+      body: [this.addMacthModel.body],
+      dateClose: [this.addMacthModel.dateClose],
+      statusOfColse: [this.addMacthModel.statusOfColse],
+    });
     console.log(this.addMacth);
   }
 
   onSubmit() {
-
+    this.addMacth = this.formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      age: ['']
+    });
+    console.log("Hellow");
   }
 
   /**
